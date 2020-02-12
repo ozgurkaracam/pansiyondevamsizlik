@@ -17,7 +17,8 @@ $(document).ready(function () {
     $("td.frmBaslik").html(`
     <button class="etutharic" style="padding:4px"> Tümünü Seç (Etüt Hariç.) </button>
     <button class="etutdahil" style="padding:4px"> Tümünü Seç (Etüt Dahil.) </button>
-    <button class="kopyala" style="padding:4px"> Tümünü Seç (Etüt Dahil.) </button>
+    <button class="kopyala" style="padding:4px"> Devamsızlık Kopyala. </button>
+    <button class="yapistir" style="padding:4px"> Devamsızlık Yapıştır. </button>
     `);
 
     function onlyUnique(value, index, self) { 
@@ -43,8 +44,8 @@ $(document).ready(function () {
 
 
 
-    $(".kopyala").click(function(){
-        
+    $(".kopyala").click(function(e){
+        e.preventDefault();
         let dizi = $(":checked");
         dizi.splice(0,3);
         let dizi1=[]
@@ -52,9 +53,21 @@ $(document).ready(function () {
                 dizi1.push(e.parentElement.parentElement.parentElement)
         });
         dizi1=dizi1.filter(onlyUnique);
-        console.log(dizi1.length);
+        $.each(dizi1,function(i,e){
+            i=i.toString();
+            chrome.storage.local.set({ i : e}, function() {
+                console.log("kaydedildi.")
+              });
+        });
     });
 
+
+    $(".yapistir").click(function(e){
+        e.preventDefault();
+        chrome.storage.local.get('0',function(result){
+            console.log(result);
+        })
+    });
 
     $(".etutharic").click(function () {
 
