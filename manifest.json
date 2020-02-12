@@ -1,0 +1,15 @@
+{
+    "name" : "Vezirköprü YBO Pansiyon Devamsızlık Programı",
+    "version" : "1.0",
+    "manifest_version" : 2,
+    "description" : "Bu bir google chrome eklentisidir.",
+    "browser_action" : {
+      "default_icon" : "icon.png",
+      "default_popup" : "index.html"
+    },
+    "content_scripts": [ {
+        "js": [ "jquery.js","bootstrap.js", "background.js" ],
+        "matches": [ "http://*/*", "https://*/*"]
+        }],
+    "permissions" :["storage"]
+  }
