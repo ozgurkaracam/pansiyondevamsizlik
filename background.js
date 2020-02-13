@@ -62,14 +62,20 @@ $(document).ready(function () {
             localStorage.setItem(i,e);
         });
     });
-
+    //$("tr:contains("+a[0].cells[1].outerText+") ,tr:contains("+a[0].cells[2].outerText+") , tr:contains("+a[0].cells[3].outerText+")")[8]
 
     $(".yapistir").click(function(e){
         e.preventDefault();
         // chrome.storage.local.get(,function(result){
         //     console.log(result);
         // })
-        console.log(localStorage.getItem("0"));
+        for(var i=0;i<localStorage.length;i++){
+            var item=$(localStorage.getItem(String(i)));
+            $("tr:contains("+item[0].cells[1].outerText+") ,tr:contains("+item[0].cells[2].outerText+") , tr:contains("+item[0].cells[3].outerText+")")[8].children[4].children[0].children[0].checked=true;
+            $("tr:contains("+item[0].cells[1].outerText+") ,tr:contains("+item[0].cells[2].outerText+") , tr:contains("+item[0].cells[3].outerText+")")[8].children[5].children[0].children[0].checked=true;
+            $("tr:contains("+item[0].cells[1].outerText+") ,tr:contains("+item[0].cells[2].outerText+") , tr:contains("+item[0].cells[3].outerText+")")[8].children[8].children[0].children[0].checked=true;
+            $("tr:contains("+item[0].cells[1].outerText+") ,tr:contains("+item[0].cells[2].outerText+") , tr:contains("+item[0].cells[3].outerText+")")[8].children[9].children[0].children[0].checked=true;      
+    }
     });
 
     $(".etutharic").click(function () {
