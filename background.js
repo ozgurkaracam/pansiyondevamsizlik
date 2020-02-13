@@ -48,25 +48,28 @@ $(document).ready(function () {
         e.preventDefault();
         let dizi = $(":checked");
         dizi.splice(0,3);
-        let dizi1=[]
+        let dizi1=[];
         $.each(dizi,function(i,e){
                 dizi1.push(e.parentElement.parentElement.parentElement)
         });
         dizi1=dizi1.filter(onlyUnique);
         $.each(dizi1,function(i,e){
-            i=i.toString();
-            chrome.storage.local.set({ i : e}, function() {
-                console.log("kaydedildi.")
-              });
+            i=String(i);
+            e=e.outerHTML;
+            // chrome.storage.local.set({i: e}, function() {
+            //     console.log(i+' Value is set to ' + e);
+            //   });
+            localStorage.setItem(i,e);
         });
     });
 
 
     $(".yapistir").click(function(e){
         e.preventDefault();
-        chrome.storage.local.get('0',function(result){
-            console.log(result);
-        })
+        // chrome.storage.local.get(,function(result){
+        //     console.log(result);
+        // })
+        console.log(localStorage.getItem("0"));
     });
 
     $(".etutharic").click(function () {
