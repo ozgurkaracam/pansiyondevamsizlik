@@ -28,7 +28,7 @@ $(document).ready(function () {
     <h3 class="yok"></h3>
     
     `);
-    $("<small style='font-size:9px'><u>Bilgi Notu:</u> Tümünü işaretle, işaretleri temizle gibi butonlara bastıktan sonra 15,20 saniye biryere basmadan bekleyiniz. Öğrenci Mevcudu, olmayan öğrenci gibi bilgiler devamsızlık kaydedildikten sonra görünür. Son yoklama, bu bilgisayardan son girilen yoklamadır. Tarayıcı geçmişi silindiğinde silinir. Tekrar kopyalanması gerekir.</small>").insertAfter(".yok")
+    $("<small style='font-size:9px'><u>Bilgi Notu:</u> Tümünü işaretle, işaretleri temizle gibi butonlara bastıktan sonra 15,20 saniye biryere basmadan bekleyiniz. Öğrenci Mevcudu, olmayan öğrenci gibi bilgiler devamsızlık kaydedildikten sonra görünür. Son yoklama, bu bilgisayardan son girilen yoklamadır. Tarayıcı geçmişi silindiğinde silinir. Tekrar kopyalanması gerekir. <u style='color:red'>Özgür KARAÇAM</u></small>").insertAfter(".yok")
 
 
 
