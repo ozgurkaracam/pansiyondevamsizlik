@@ -39,19 +39,18 @@ $(document).ready(function () {
         return self.indexOf(value) === index;
     }
 
-    let dizi = $(":checked");
-        dizi.splice(0,3);
+    let dizi = $("span.frmInput :checked");
         let dizi1=[];
         $.each(dizi,function(i,e){
                 dizi1.push(e.parentElement.parentElement.parentElement)
         });
         dizi1=dizi1.filter(onlyUnique);
-    $("h3.yok").html(dizi1.length+" Öğrenci yok.");
+    $("h3.yok").html(dizi1.length+" Öğrenci Yok.");
     //+ 
     
     function kopyala(){
         localStorage.clear();
-        let dizi = $(":checked");
+        let dizi = $("span.frmInput :checked");
         dizi.splice(0,3);
         let dizi1=[];
         $.each(dizi,function(i,e){
