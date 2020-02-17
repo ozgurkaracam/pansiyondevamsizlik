@@ -51,7 +51,6 @@ $(document).ready(function () {
     function kopyala(){
         localStorage.clear();
         let dizi = $("span.frmInput :checked");
-        dizi.splice(0,3);
         let dizi1=[];
         $.each(dizi,function(i,e){
                 dizi1.push(e.parentElement.parentElement.parentElement)
